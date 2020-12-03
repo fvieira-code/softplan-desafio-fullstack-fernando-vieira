@@ -72,7 +72,7 @@ public class AssuntoController extends AbstractController{
         String uri = String.format("%s/%s/%s", URI_ASSUNTO_CONSULTAR_PATH, assuntoRequestDTO.getDescricaoAssunto(), REGEX_RAZAO_OPER_CONSULTA_OBJETO);
         this.salvarControleMensagem(assuntoRequestDTO, headers, HttpMethod.GET, uri, DominioControleMensagem.INICIADO);
         AssuntoResponseDTO response = this. assuntoService.consultarAssunto(assuntoRequestDTO);
-        this.salvarControleMensagem(assuntoRequestDTO, headers, HttpMethod.GET, uri, DominioControleMensagem.PROCESSADO);
+        this.salvarControleMensagem(response, headers, HttpMethod.GET, uri, DominioControleMensagem.PROCESSADO);
         return ok(response);
     }
 
@@ -162,7 +162,7 @@ public class AssuntoController extends AbstractController{
         String uri = this.getUriNormalizada(URI_ASSUNTO_REMOVER_PATH);
         this.salvarControleMensagem(assuntoRequestDTO, headers, HttpMethod.DELETE, uri, DominioControleMensagem.INICIADO);
         AssuntoResponseDTO response = this.assuntoService.excluirAssunto(assuntoRequestDTO, DominioStatusObjeto.EXCLUIDO);
-        this.salvarControleMensagem(assuntoRequestDTO, headers, HttpMethod.DELETE, uri, DominioControleMensagem.PROCESSADO);
+        this.salvarControleMensagem(response, headers, HttpMethod.DELETE, uri, DominioControleMensagem.PROCESSADO);
         return ok(response);
     }
 }

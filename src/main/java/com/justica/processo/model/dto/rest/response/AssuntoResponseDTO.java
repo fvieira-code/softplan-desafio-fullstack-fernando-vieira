@@ -25,4 +25,9 @@ public class AssuntoResponseDTO implements RestDTO {
     private String correlationId;
     @JsonIgnore
     private String codigoUsuario;
+
+    @Override
+    public String getInformation() {
+        return codigoUsuario.concat(correlationId);
+    }
 }

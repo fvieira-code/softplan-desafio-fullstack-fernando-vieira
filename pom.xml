@@ -29,10 +29,9 @@
         <openapi-generator.version>3.3.4</openapi-generator.version>
         <springdoc.openapi.ui.version>1.4.3</springdoc.openapi.ui.version>
 
-        <!--
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        -->
+
     </properties>
 
     <dependencies>
@@ -164,11 +163,21 @@
             <artifactId>jakarta.ws.rs-api</artifactId>
             <version>2.1.6</version>
         </dependency>
+
+        <!--
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+        -->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.13.3</version>
         </dependency>
 
         <!--

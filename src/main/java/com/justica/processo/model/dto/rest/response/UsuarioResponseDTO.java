@@ -11,6 +11,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -26,6 +27,8 @@ public class UsuarioResponseDTO {
     @NotEmpty(message = "entity.usuario.senha.notempty.message")
     private String senhaUsuario;
 
-    @NotEmpty(message = "dto.objeto.status.notempty.message")
-    private DominioStatusObjeto statusUsuario;
+    //@NotEmpty(message = "dto.objeto.status.notempty.message")
+    //private DominioStatusObjeto statusUsuario;
+
+    private Date dataCadastro;
 }

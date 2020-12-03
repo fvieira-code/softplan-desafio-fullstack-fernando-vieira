@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -20,6 +21,8 @@ public class UsuarioRequestDTO {
     @NotEmpty(message = "entity.usuario.senha.notempty.message")
     private String senhaUsuario;
 
-    @NotEmpty(message = "dto.objeto.status.notempty.message")
-    private DominioStatusObjeto statusUsuario;
+    //@NotEmpty(message = "dto.objeto.status.notempty.message")
+    //private DominioStatusObjeto statusUsuario;
+
+    private Date dataCadastro;
 }

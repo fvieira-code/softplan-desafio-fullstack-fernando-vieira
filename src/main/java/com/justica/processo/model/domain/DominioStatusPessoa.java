@@ -8,7 +8,10 @@ import static com.justica.processo.constants.MensagemConstants.MSG_EXCEPTION_VAL
 public enum DominioStatusPessoa {
     ATIVO("ACTIVE"),
     INATIVO("INACTIVE"),
-    EXCLUIDO("EXCLUDED");
+    EXCLUIDO("EXCLUDED"),
+    PENDENTE("PENDENTE"),
+    EFETIVADO("EFETIVADO"),
+    CANCELADO("CANCELADO");
 
     @Getter
     private String value;
@@ -34,4 +37,7 @@ public enum DominioStatusPessoa {
     public boolean isAtivo(){return ATIVO.equals(this);}
     public boolean isInativo(){return INATIVO.equals(this);}
     public boolean isExcluido(){return EXCLUIDO.equals(this);}
+    public boolean isPendente(){return PENDENTE.equals(this);}
+    public boolean isEfetivado(){return EFETIVADO.equals(this);}
+    public boolean isCancelado(){return CANCELADO.equals(this);}
 }

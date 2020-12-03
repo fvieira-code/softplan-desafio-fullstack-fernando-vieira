@@ -14,7 +14,7 @@ public abstract class AbstractEntity implements Serializable {
     @Column(name = "codigousu", nullable = false)
     private String codigoUsuario;
 
-    @Column(name = "codigocid", nullable = false)
+    @Column(name = "codigocid", nullable = true)
     private String correlationId;
 
 }

@@ -22,4 +22,9 @@ public class AssuntoRequestDTO implements RestDTO {
     private String correlationId;
     @JsonIgnore
     private String codigoUsuario;
+
+    @Override
+    public String getInformation() {
+        return this.getCodigoUsuario().concat(this.getCorrelationId());
+    }
 }

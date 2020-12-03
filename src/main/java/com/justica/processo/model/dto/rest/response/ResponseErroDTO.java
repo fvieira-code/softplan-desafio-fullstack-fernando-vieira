@@ -14,4 +14,9 @@ public class ResponseErroDTO implements RestDTO {
 
     private String correlationId;
     private String codigoUsuario;
+
+    @Override
+    public String getInformation() {
+        return this.getCodigoUsuario().concat(this.getCorrelationId());
+    }
 }

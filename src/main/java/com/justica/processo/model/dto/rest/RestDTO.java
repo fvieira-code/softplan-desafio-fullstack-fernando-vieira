@@ -6,7 +6,9 @@ import java.io.Serializable;
 
 public interface RestDTO extends Serializable {
     @JsonIgnore
-    String getCorrelationId();
-    @JsonIgnore
+    String getInformation();
+
     String getCodigoUsuario();
+
+    String getCorrelationId();
 }

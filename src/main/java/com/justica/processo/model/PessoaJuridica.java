@@ -40,6 +40,6 @@ public class PessoaJuridica extends Pessoa {
     @Column(name = "codigousu", nullable = false)
     private String codigoUsuario;
 
-    @Column(name = "codigocid", nullable = false)
+    @Column(name = "codigocid", nullable = true)
     private String correlationId;
 }

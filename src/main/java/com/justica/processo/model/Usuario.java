@@ -1,45 +1,39 @@
 package com.justica.processo.model;
 
-import com.justica.processo.model.domain.DominioStatusObjeto;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import org.apache.logging.log4j.util.Strings;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import javax.validation.constraints.Size;
-import java.util.UUID;
-
-@Data
-@EqualsAndHashCode(callSuper = false)
 @Entity
-@Table(name = "usuario")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class Usuario extends AbstractEntity {
+@Table( name = "usuario" , schema = "financas")
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Usuario {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, unique = true, length = 100)
-    private String id;
+    @Column(name = "id")
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
+    private Long id;
 
-    @Size(max = 100, message = "entity.usuario.nome.size.message")
-    @Column(name = "nomeusu", nullable = false, length = 100)
-    private String nomeUsuario;
+    @Column(name = "nome")
+    private String nome;
 
-    @Size(max = 100, message = "entity.usuario.email.size.message")
-    @Column(name = "emailusu", nullable = false, length = 100)
-    private String emailUsuario;
+    @Column(name = "email")
+    private String email;
 
-    @Size(max = 100, message = "entity.usuario.senha.size.message")
-    @Column(name = "senhausu", nullable = false, length = 100)
-    private String senhaUsuario;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "statususu", length = 10, insertable = true, updatable = true)
-    private DominioStatusObjeto statusUsuario;
-
-    @PrePersist
-    public void prePersist() {
-        if (Strings.isEmpty(this.id)) {
-            this.id = UUID.randomUUID().toString();
-        }
-    }
+    @Column(name = "senha")
+    @JsonIgnore
+    private String senha;
 }

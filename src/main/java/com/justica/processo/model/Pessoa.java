@@ -18,7 +18,8 @@ import java.util.UUID;
 public class Pessoa extends AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigopes", nullable = false, unique = true, length = 100)
+    //@Column(name = "codigopes", nullable = false, unique = true, length = 100)
+    @Column(name = "id", nullable = false, unique = true)
     private String id;
 
     @Size(max = 100, message = "entity.pessoa.nome.size.message")

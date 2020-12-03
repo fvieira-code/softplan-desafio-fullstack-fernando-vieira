@@ -4,8 +4,8 @@ import lombok.Getter;
 
 public enum DominioTipoPessoa {
 
-    FISICA("PESSOA_FISICA"),
-    JURIDICA("PESSOA_JURIDICA");
+    FISICA("FISICA"),
+    JURIDICA("JURIDICA");
 
     @Getter
     private String value;
